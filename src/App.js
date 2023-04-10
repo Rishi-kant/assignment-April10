@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const[number,setNumber]=useState(2)
+  const num=[1,2,3,4,5,6,7,8,9,10]
+  function changeNumber(){
+    //Math.floor(Math.random() * (max - min) + min);
+    const randomNom=Math.floor(Math.random()*99+1)
+    setNumber(randomNom)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <button onClick={changeNumber}> Table of : ({number})</button>
+      <ul>
+       {
+        num.map((nums,index)=> 
+        <li key={index}>{nums*number}</li>
+        )
+       }
+       </ul>
     </div>
   );
 }
