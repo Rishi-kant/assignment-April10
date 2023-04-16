@@ -1,0 +1,13 @@
+
+
+table {
+    border: 2px solid forestgreen;
+    width: 600px;
+   
+  }
+  th{
+    border: 2px solid;
+  }
+  td{
+    border: 2px solid;
+  }
